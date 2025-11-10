@@ -2,7 +2,7 @@ app:
   name: todoapp
   containerName: todoapp
   appServiceName: todoapp-service
-  image: rahuldevsecops/todoapp
+  image: rahuldevsecops/springboot-todo-app
   tag: v2
   replicas: 3
   containerPort: 9099
