@@ -1,9 +1,17 @@
-FROM maven AS build
+# Stage 1: Build the app using Maven
+FROM maven:3.8.1-openjdk-17 AS build
+
+# Clone the specific branch and build the app
 RUN git clone https://github.com/rahuldevlenka16/spring_boot_todo_app.git
-RUN cd spring_boot_todo_app && mvn clean package
+WORKDIR /spring_boot_todo_app
+RUN mvn clean package -DskipTests
 
-FROM adoptopenjdk/openjdk8
-COPY --from=build spring_boot_todo_app/target/todoApp.jar app/todoApp.jar
+# Stage 2: Create the runtime image
+FROM openjdk:17-ea-18-slim
 
-# ENTRYPOINT [ "mvn" ]
-CMD [ "java", "-jar", "app/todoApp.jar" ]
+# Copy the built .jar file from the build stage
+COPY --from=build /spring_boot_todo_app/target/todoApp.jar /app/todoApp.jar
+
+# Set the working directory and command to run the app
+WORKDIR /app
+CMD ["java", "-jar", "todoApp.jar"]

@@ -2,17 +2,17 @@
 
 name: CI/CD
 
-# Exclude the workflow to run on changes to the helm chart
 on:
   push:
     branches:
-      - cicd
+      - master
     paths-ignore:
       - 'Dockerfiles/**'
       - 'HelmChart/**'
       - 'kubedefs/**'
-      - 'readme'
       - 'README.md'
+      - 'compose.yaml'
+      - 'target/**'
 jobs:
   build:
     runs-on: ubuntu-latest
