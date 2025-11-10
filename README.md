@@ -46,7 +46,8 @@ This project consolidates multiple branches of a Spring Boot application into a 
 
 ## 🏗 Architecture Diagram
 
-in progerss..
+![Alt text](cicd.drawio.svg)
+
 ---
 
 ## ⚙️ Prerequisites
