@@ -46,7 +46,10 @@ This project consolidates multiple branches of a Spring Boot application into a 
 
 ## 🏗 Architecture Diagram
 
-![Alt text](cicd.drawio.svg)
+
+  <img width="1059" height="544" alt="image" src="https://github.com/user-attachments/assets/4226b70b-66d3-4248-aaf3-a1aaa6cb37be" />
+
+
 
 ---
 
