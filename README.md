@@ -1,0 +1,67 @@
+# 🚀 SpringBoot DevOpsified
+
+[![Maven](https://img.shields.io/badge/Build-Maven-C71A36?logo=apachemaven)](https://maven.apache.org/)
+[![Docker](https://img.shields.io/badge/Container-Docker-2496ED?logo=docker)](https://www.docker.com/)
+[![Terraform](https://img.shields.io/badge/IaC-Terraform-7B42BC?logo=terraform)](https://www.terraform.io/)
+[![Helm](https://img.shields.io/badge/Deployment-Helm-0F1689?logo=helm)](https://helm.sh/)
+[![Kubernetes](https://img.shields.io/badge/Orchestration-Kubernetes-326ce5?logo=kubernetes)](https://kubernetes.io/)
+[![Argo CD](https://img.shields.io/badge/GitOps-Argo%20CD-FE5000?logo=argo)](https://argo-cd.readthedocs.io/)
+
+
+> A unified **DevOpsified Spring Boot** monorepo featuring Maven, Docker, Terraform (EKS), Helm, Kubernetes, and Argo CD.
+
+
+
+This is a **Unified monorepo** combining all DevOps layers — CI/CD, Docker, Terraform (EKS), Helm, and Kubernetes — for a Spring Boot application using my previous project https://github.com/rahuldevlenka16/spring_boot_todo_app
+
+The old project consists of 
+
+| Branch | Purpose |
+|-------------|----------|
+| `master` | Core Spring Boot application code |
+| `docker` | Docker containerization setup |
+| `cicd` | GitHub Actions workflows for CI/CD |
+| `terraform` | Infrastructure-as-Code to provision AWS EKS cluster |
+| `helm` | Helm chart for Kubernetes deployment |
+| `k8s` | Raw Kubernetes manifests |
+
+All of these have now been **consolidated into a single monorepo**, for easier management, automation, and version control.
+
+---
+
+## 📝 Project Overview
+
+This project consolidates multiple branches of a Spring Boot application into a **single monorepo**, covering:
+
+- Application source code (Spring Boot)
+- Containerization (Docker)
+- CI/CD pipelines (GitHub Actions)
+- Infrastructure provisioning (Terraform → AWS EKS)
+- Kubernetes deployment (Helm)
+- Continuous deployment via GitOps (Argo CD)
+
+**Goal:** Demonstrate a full end-to-end DevOps workflow for a real-world Java application.
+
+---
+
+## 🏗 Architecture Diagram
+
+in progerss..
+---
+
+## ⚙️ Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- Java 8+ & Maven
+- Docker
+- kubectl
+- Helm 
+- Terraform
+- AWS CLI (for EKS deployment)
+
+---
+
+
+
+
