@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todoapp-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: {{ .Values.app.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.app.name }} 
+    spec:
+      initContainers:
+        - name: wait-for-mysql
+          image: busybox
+          command:
+            - sh
+            - -c
+            - >
+              until nslookup todomysql.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local;
+              do echo "Waiting for MySQL to be reachable..."; sleep 2; done;
+
+
+      containers:
+      - name: {{ .Values.app.containerName }}
+        image: {{ .Values.app.image }}:{{ .Values.app.tag }} 
+        ports:
+        - name: "todoapp-port"
+          containerPort: {{ .Values.app.containerPort }} 
+   

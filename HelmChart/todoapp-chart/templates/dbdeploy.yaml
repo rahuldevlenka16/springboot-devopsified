@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db-deployment
+  labels:
+    app: {{ .Values.mysql.name }}
+spec:
+  selector: 
+    matchLabels:
+      app: {{ .Values.mysql.name }}
+  
+  replicas: 1 
+
+  template: 
+    metadata:
+      labels:
+        app: {{ .Values.mysql.name }}
+  
+    spec:  
+      initContainers: 
+      - name: remove-lostfound-folder
+        image: busybox:latest
+        args: ["rm", "-rf", "/var/lib/mysql/lost+found"]
+        volumeMounts:
+          - name: tododb-volume
+            mountPath: /var/lib/mysql
+
+      containers:
+      - name: {{ .Values.mysql.dbContainerName }} 
+        image: {{ .Values.mysql.image }} 
+        
+        ports:
+        - containerPort: 3306 
+        env:
+         - name: MYSQL_ROOT_PASSWORD
+           valueFrom:
+             secretKeyRef:
+               name: db-secret 
+               key: db-root-pass 
+        volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: tododb-volume
+      volumes: 
+      - name: tododb-volume 
+        persistentVolumeClaim:
+          claimName: db-pvc 
+      
+    
+
+
+
+
