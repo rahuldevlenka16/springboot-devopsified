@@ -48,7 +48,8 @@ This project consolidates multiple branches of a Spring Boot application into a 
 
 
 <!-- <img width="1059" height="544" alt="image" src="https://github.com/user-attachments/assets/4226b70b-66d3-4248-aaf3-a1aaa6cb37be" /> -->
-<img width="1216" height="661" alt="todo app diagram" src="https://github.com/user-attachments/assets/d9a483f5-fcb6-4ed9-9850-30efe3888526" />
+<img width="1153" height="536" alt="todo app diagram" src="https://github.com/user-attachments/assets/679a53aa-a0f9-4442-aa1e-44bb3d5ed92e" />
+
   
 
 
