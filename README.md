@@ -47,7 +47,9 @@ This project consolidates multiple branches of a Spring Boot application into a 
 ## 🏗 Architecture Diagram
 
 
-  <img width="1059" height="544" alt="image" src="https://github.com/user-attachments/assets/4226b70b-66d3-4248-aaf3-a1aaa6cb37be" />
+<!-- <img width="1059" height="544" alt="image" src="https://github.com/user-attachments/assets/4226b70b-66d3-4248-aaf3-a1aaa6cb37be" /> -->
+<img width="1216" height="661" alt="todo app diagram" src="https://github.com/user-attachments/assets/d9a483f5-fcb6-4ed9-9850-30efe3888526" />
+  
 
 
 This architecture shows the entire CI/CD process for deploying applications on Amazon EKS using GitHub Actions, Docker, Helm, and ArgoCD. When a user commits code to the GitHub repository, the GitHub Actions pipeline is triggered. THe build job will build a Docker image and push it to Docker Hub with tag as per the last build ID. The update helm job will will then updates the Helm chart values (with the new image tag). ArgoCD continuously monitors this repository and automatically syncs any changes to the EKS cluster, ensuring the latest application version is deployed seamlessly without manual intervention into the EKS cluster.
