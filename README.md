@@ -44,18 +44,19 @@ This project consolidates multiple branches of a Spring Boot application into a 
 
 ---
 
-## 🏗 Architecture Diagram
+## 🏗 Architecture Diagram (High level)
 
 
 <!-- <img width="1059" height="544" alt="image" src="https://github.com/user-attachments/assets/4226b70b-66d3-4248-aaf3-a1aaa6cb37be" /> -->
 <!-- <img width="1153" height="536" alt="todo app diagram" src="https://github.com/user-attachments/assets/679a53aa-a0f9-4442-aa1e-44bb3d5ed92e" /> -->
-<img width="2369" height="1101" alt="springboot devop" src="https://github.com/user-attachments/assets/c994613c-9091-42df-b18c-1ffc3c0377f9" />
-
-  
-
+<img width="2369" height="1101" alt="springboot devop" src="https://github.com/user-attachments/assets/c994613c-9091-42df-b18c-1ffc3c0377f9" /> 
 
 This architecture shows the entire CI/CD process for deploying applications on Amazon EKS using GitHub Actions, Docker, Helm, and ArgoCD. When a user commits code to the GitHub repository, the GitHub Actions pipeline is triggered. THe build job will build a Docker image and push it to Docker Hub with tag as per the last build ID. The update helm job will will then updates the Helm chart values (with the new image tag). ArgoCD continuously monitors this repository and automatically syncs any changes to the EKS cluster, ensuring the latest application version is deployed seamlessly without manual intervention into the EKS cluster.
----
+
+  ## 🏗 Architecture Diagram (Detailed)
+<img width="5002" height="2422" alt="4" src="https://github.com/user-attachments/assets/340d3f00-c115-452d-9233-09e6a298ec64" />
+
+When a developer pushes code to GitHub, GitHub Actions automatically builds a Docker image, pushes it to Docker Hub, updates the Helm chart with the new image tag, and commits the change. ArgoCD continuously monitors the Helm chart repo and, when it detects the update, syncs the changes to the EKS cluster, ensuring the latest application version is deployed. Inside EKS, three application pods and one MySQL StatefulSet pod run as part of the workload, with the database pod using a Persistent Volume and Persistent Volume Claim backed by EBS for durable storage. Kubernetes Services expose the workloads: the Application Service uses a LoadBalancer to route external traffic, while the DB Service exposes MySQL internally to app pods. When a user sends a request, it hits the external LoadBalancer, flows to the AppService, then to one of the application pods, which queries the MySQL pod for data and receives the response from persistent storage. The application pod returns the final output through the LoadBalancer back to the user, enabling a fully automated, scalable, and production-grade deployment pipeline.
 
 ## ⚙️ Prerequisites
 
