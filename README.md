@@ -6,6 +6,8 @@
 [![Helm](https://img.shields.io/badge/Deployment-Helm-0F1689?logo=helm)](https://helm.sh/)
 [![Kubernetes](https://img.shields.io/badge/Orchestration-Kubernetes-326ce5?logo=kubernetes)](https://kubernetes.io/)
 [![Argo CD](https://img.shields.io/badge/GitOps-Argo%20CD-FE5000?logo=argo)](https://argo-cd.readthedocs.io/)
+[![Prometheus](https://img.shields.io/badge/Monitoring-Prometheus-E6522C?logo=prometheus)](https://prometheus.io/)
+[![Grafana](https://img.shields.io/badge/Visualization-Grafana-F46800?logo=grafana)](https://grafana.com/)
 
 
 > A unified **DevOpsified Spring Boot** monorepo featuring Maven, Docker, Terraform (EKS), Helm, Kubernetes, and Argo CD.
