@@ -24,7 +24,7 @@ The old project consists of
 | `docker` | Docker containerization setup |
 | `cicd` | GitHub Actions workflows for CI/CD |
 | `terraform` | Infrastructure-as-Code to provision AWS EKS cluster |
-| `helm` | Helm chart for Kubernetes deployment |
+| `helm` | Helm chart for Kubernetes deployment, prometheus and grafana|
 | `k8s` | Raw Kubernetes manifests |
 
 All of these have now been **consolidated into a single monorepo**, for easier management, automation, and version control.
