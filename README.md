@@ -72,5 +72,17 @@ Before you begin, ensure you have the following installed:
 ---
 
 
+## CI in Github Actions
+  <img width="1652" height="680" alt="image" src="https://github.com/user-attachments/assets/a3722760-704b-4f55-8ceb-8efedc17f545" />
+
+## CD in Argo CD
+  <img width="826" height="726" alt="image" src="https://github.com/user-attachments/assets/d8582afa-c79a-4c8b-b7f8-80ddfdaf8b84" />
+  <img width="1733" height="816" alt="image" src="https://github.com/user-attachments/assets/f6163e27-0a15-4110-b072-5a9da9b66d68" />
+
+## Monitoring
+  <img width="1637" height="935" alt="image" src="https://github.com/user-attachments/assets/e1813a06-3242-4f0c-9ab6-95ebf3ec8889" />
+
+  <img width="1779" height="939" alt="image" src="https://github.com/user-attachments/assets/ceb50eef-0881-464c-91e7-b7ec22f3daab" />
+
 
 
