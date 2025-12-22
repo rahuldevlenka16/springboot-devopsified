@@ -9,3 +9,6 @@ spec:
   - port: 3306 #service will listen in this port for incoming request and forward to below target port
     targetPort: 3306 #container port
   type: ClusterIP #for internal pod communication and load balanacing
+
+#Reason to use 3 ports,
+# in docker we had 2 ports beacause app is running on conainter env, to access the port we map it with host port, in k8s, there are 2 isloated environment, one is the cluster and other is the pod container, so host NodePort is mapped to cluster port and cluster (service) port is mapped to pod container target pod. 
