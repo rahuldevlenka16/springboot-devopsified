@@ -30,8 +30,8 @@ spec:
         image: mysql:8.0.33 # dockerhub offical image
         # resources:
         #   limits:
-        #     memory: "128Mi"
-        #     cpu: "500m"
+        #     memory: "128Mi" #max memory allowed, once app crosses this limit, it will be OOM killed
+        #     cpu: "500m" # 0.5 CPu is max allowed, beyond this it will slow down due to CPU throtelling
         ports:
         - containerPort: 3306 # container internal port
         env:
