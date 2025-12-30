@@ -4,15 +4,11 @@ name: CI/CD
 
 on:
   push:
+    paths:
+      - "src/**"
+      - "Dockerfiles/**"
     branches:
       - master
-    paths-ignore:
-      - 'Dockerfiles/**'
-      - 'HelmChart/**'
-      - 'kubedefs/**'
-      - 'README.md'
-      - 'compose.yaml'
-      - 'target/**'
 jobs:
   # build:
   #   runs-on: ubuntu-latest
