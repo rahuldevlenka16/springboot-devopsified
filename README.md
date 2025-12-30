@@ -73,6 +73,39 @@ Before you begin, ensure you have the following installed:
 
 ---
 
+## tools installation
+  
+    install git(refer docs)
+    install docker(refer docs)
+    
+    instal kubectl:
+      curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+      chmod +x kubectl
+      sudo mv kubectl /usr/local/bin/
+      kubectl --version
+  
+    install minikube:
+    	curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    	sudo install minikube-linux-amd64 /usr/local/bin/minikube
+    	minikube --version
+  
+  
+    install helm:
+      curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+    	helm version
+
+
+## running the application(must install above tools first!)
+
+    git clone https://github.com/rahuldevlenka16/springboot-devopsified
+    cd springboot-devopsified/HelmChart/
+    helm install test-app todoapp-chart/
+    kubectl get pods
+    kubectl get svc  
+  <img width="953" height="128" alt="image" src="https://github.com/user-attachments/assets/4ab4f505-a5fb-429c-88b4-fe9a8b097a78" />
+
+
+---
 
 ## CI in Github Actions
   <img width="1652" height="680" alt="image" src="https://github.com/user-attachments/assets/a3722760-704b-4f55-8ceb-8efedc17f545" />
