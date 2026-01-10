@@ -1,3 +1,10 @@
+## Update
+### incoming features to I will implement in k8s
+  1. config map
+  2. Autoscaling (using HPA)
+  3. monitoring( using skooner https://github.com/skooner-k8s/skooner)
+  4. Security (RBAC, cluster role, service account)
+---
 # 🚀 SpringBoot DevOpsified
 
 [![Maven](https://img.shields.io/badge/Build-Maven-C71A36?logo=apachemaven)](https://maven.apache.org/)
